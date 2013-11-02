@@ -34,8 +34,8 @@
             <div class="wrapper"></div>
             <nav>
                 <ul class="sf-menu">
-                    <li class="current"><strong></strong><a href="#">Home</a></li>
-                    <li><strong></strong><a href="#">About Us</a></li>
+                    <li class="current"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>">Home</a></li>
+                    <li><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>/about">About Us</a></li>
                     <li><strong></strong><a href="#">Archives</a></li>
                     <li><strong></strong><a href="#">Objective</a></li>
                     <li><strong></strong><a href="#">Privacy Policy</a></li>
