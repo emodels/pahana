@@ -593,3 +593,72 @@ nav select{
 .padding {
     padding: 0 20px;
 }
+
+.login_box{
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    background: #e5eCf9;    
+    box-shadow: 2px 2px 2px #888888;
+    border: solid 1px silver;    
+    border-radius: 5px;
+    /* IE10 Consumer Preview */ 
+    background-image: -ms-radial-gradient(center, ellipse farthest-corner, #FFFFFF 0%, #DFE8E8 100%);
+
+    /* Mozilla Firefox */ 
+    background-image: -moz-radial-gradient(center, ellipse farthest-corner, #FFFFFF 0%, #DFE8E8 100%);
+
+    /* Opera */ 
+    background-image: -o-radial-gradient(center, ellipse farthest-corner, #FFFFFF 0%, #DFE8E8 100%);
+
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(radial, center center, 0, center center, 506, color-stop(0, #FFFFFF), color-stop(1, #DFE8E8));
+
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-radial-gradient(center, ellipse farthest-corner, #FFFFFF 0%, #DFE8E8 100%);
+
+    /* W3C Markup, IE10 Release Preview */ 
+    background-image: radial-gradient(ellipse farthest-corner at center, #FFFFFF 0%, #DFE8E8 100%);
+}
+
+.gradient_gray_box{
+    padding: 5px;
+    border: solid 1px silver;
+    border-radius: 5px;
+    /* IE10 Consumer Preview */ 
+    background-image: -ms-linear-gradient(bottom, #CBD9CB 0%, #FFFFFF 50%, #C6D4C6 100%);
+
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(bottom, #CBD9CB 0%, #FFFFFF 50%, #C6D4C6 100%);
+
+    /* Opera */ 
+    background-image: -o-linear-gradient(bottom, #CBD9CB 0%, #FFFFFF 50%, #C6D4C6 100%);
+
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #CBD9CB), color-stop(0.5, #FFFFFF), color-stop(1, #C6D4C6));
+
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-linear-gradient(bottom, #CBD9CB 0%, #FFFFFF 50%, #C6D4C6 100%);
+
+    /* W3C Markup, IE10 Release Preview */ 
+    background-image: linear-gradient(to top, #CBD9CB 0%, #FFFFFF 50%, #C6D4C6 100%);
+}
+
+.gradient_gray_box:hover{
+    /* IE10 Consumer Preview */ 
+    background-image: -ms-linear-gradient(bottom, #A7B3A7 0%, #FFFFFF 50%, #A5B0A5 100%);
+
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(bottom, #A7B3A7 0%, #FFFFFF 50%, #A5B0A5 100%);
+
+    /* Opera */ 
+    background-image: -o-linear-gradient(bottom, #A7B3A7 0%, #FFFFFF 50%, #A5B0A5 100%);
+
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #A7B3A7), color-stop(0.5, #FFFFFF), color-stop(1, #A5B0A5));
+
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-linear-gradient(bottom, #A7B3A7 0%, #FFFFFF 50%, #A5B0A5 100%);
+
+    /* W3C Markup, IE10 Release Preview */ 
+    background-image: linear-gradient(to top, #A7B3A7 0%, #FFFFFF 50%, #A5B0A5 100%);
+}
