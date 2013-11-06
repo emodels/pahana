@@ -42,6 +42,21 @@
                 </ul>
                 <div class="clear"></div>
             </nav>
+            <?php
+                $flashMessages = Yii::app()->user->getFlashes();
+                if ($flashMessages) {
+                    echo '<ul class="flashes" style="list-style-type:none; margin: 0px; padding: 0px">';
+                    foreach($flashMessages as $key => $message) {
+                        echo '<li><div class="flash-' . $key . '">' . $message . "</div></li>\n";
+                    }
+                    echo '</ul>';
+                    Yii::app()->clientScript->registerScript(
+                    'myHideEffect',
+                    '$(".flashes").animate({opacity: 1.0}, 3000).fadeOut("slow");',
+                    CClientScript::POS_READY
+                    );            
+                }
+            ?>
         </header>
         <?php echo $content; ?>
         </div>

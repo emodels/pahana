@@ -46,6 +46,7 @@ class User extends CActiveRecord
 			array('user_type, status', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name', 'length', 'max'=>100),
 			array('email, username, password, conf_password', 'length', 'max'=>50),
+                        array('conf_password', 'compare', 'compareAttribute'=>'password'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, first_name, last_name, email, username, password, conf_password, user_type, status', 'safe', 'on'=>'search'),
