@@ -717,3 +717,7 @@ div.flash-success a
     text-indent:-9999px;
     background: url('../images/icon_top.png') no-repeat;
 }
+
+.hover_opacity:hover{
+    opacity:0.5;
+}
