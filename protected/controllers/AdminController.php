@@ -86,8 +86,12 @@ class AdminController extends Controller
             
             if (Yii::app()->request->isPostRequest) {
                 if ($paper->page_count == count($paper->pages)) {
+                    
                     $paper->status = 1;
                     $paper->save();
+                    
+                    Yii::app()->user->setFlash('success', "Paper published successfully");
+                    $this->redirect(Yii::app()->baseUrl . '/admin');
                 } else {
                     Yii::app()->user->setFlash('error', 'You must upload ' . $paper->page_count . ' pages before Publish Newspaper online');
                 }
@@ -103,7 +107,7 @@ class AdminController extends Controller
             
             $criteria = new CDbCriteria();
             $criteria->addCondition('paper = ' . $id);
-            $criteria->order = 'name';
+            $criteria->order = 'TRIM(REPLACE(name, ".pdf", ""))+0';
 
             $dataProvider = new CActiveDataProvider('Pages', array('criteria'=>$criteria, 'pagination' => array('pageSize' => 150)));
 

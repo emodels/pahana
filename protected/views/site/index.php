@@ -73,15 +73,23 @@
             <div class="padding bookshelf">
                 <div class="books">
                     <ul>
-                        <li><a href="#"><img src="images/month_book.jpg" alt="" class="bookshelf_book"></a></li>
-                        <li><a href="#"><img src="images/midmonth_book.jpg" alt="" class="bookshelf_book"></a></li>  
+                    <?php if(isset($month_paper)){ ?>
+                        <li><a href="<?php echo Yii::app()->baseUrl . '/paper/id/' . $month_paper->id; ?>"><img src="images/month_book.jpg" alt="" class="bookshelf_book"></a></li>
+                    <?php } ?>
+                    <?php if(isset($mid_month_paper)){ ?>    
+                        <li><a href="<?php echo Yii::app()->baseUrl . '/paper/id/' . $mid_month_paper->id; ?>"><img src="images/midmonth_book.jpg" alt="" class="bookshelf_book"></a></li>  
+                    <?php } ?>
                     </ul>
                 </div>
             </div>
             <div class="books_title">
                 <ul style="text-align: center">
-                    <li style="display: inline-block; padding-right:40px; padding-left: 50px"><a href="#"><b>Monthly Issue</b><br/>October - 2013</a></li>
-                    <li style="display: inline-block;"><a href="#"><b>Mid Monthly Issue</b><br/>September - 2013</a></li>  
+                    <?php if(isset($month_paper)){ ?>
+                        <li style="display: inline-block; padding-right:40px; padding-left: 50px"><a href="<?php echo Yii::app()->baseUrl . '/paper/id/' . $month_paper->id; ?>"><b>Monthly Issue</b><br/><?php echo date("F", mktime(0, 0, 0, $month_paper->month, 10)) . ' - ' . $month_paper->year; ?></a></li>
+                    <?php } ?>
+                    <?php if(isset($mid_month_paper)){ ?>    
+                        <li style="display: inline-block;"><a href="<?php echo Yii::app()->baseUrl . '/paper/id/' . $mid_month_paper->id; ?>"><b>Mid Monthly Issue</b><br/><?php echo date("F", mktime(0, 0, 0, $mid_month_paper->month, 10)) . ' - ' . $mid_month_paper->year; ?></a></li>  
+                    <?php } ?>
                 </ul>
             </div>
         </div>    

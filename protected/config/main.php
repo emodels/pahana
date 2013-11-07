@@ -41,6 +41,7 @@ return array(
                         'caseSensitive'=>false,
 			'rules'=>array(
                                 '' => 'site/index',
+                                'paper/*'=>'site/paper/*',
                                 'about'=>'site/page/view/about',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',

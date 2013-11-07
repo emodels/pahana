@@ -27,11 +27,30 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+            $month_paper = Paper::model()->find(array('condition'=>'type = 0 AND status = 1', 'order'=>'year DESC, month DESC'));
+            $mid_month_paper = Paper::model()->find(array('condition'=>'type = 1 AND status = 1', 'order'=>'year DESC, month DESC'));
+            
+            $this->render('index', array('month_paper'=>$month_paper, 'mid_month_paper'=>$mid_month_paper));
 	}
 
+        public function actionPaper($id) {
+            $paper = Paper::model()->findByPk($id);
+            
+            if (!isset($paper)) {
+                Yii::app()->user->setFlash('notice', 'Invalid Newspaper ID');
+                $this->redirect(Yii::app()->baseUrl);
+            }
+            
+            $criteria=new CDbCriteria(array(
+                    'condition' => 'paper = ' . $id,
+                    'order' => 'TRIM(REPLACE(name, ".pdf", ""))+0'
+            ));
+            
+            $dataProvider = new CActiveDataProvider('Pages', array('criteria'=>$criteria, 'pagination' => array('pageSize' => 150)));
+            
+            $this->render('paper', array('model'=>$paper, 'dataProvider'=>$dataProvider));
+        }
+        
 	/**
 	 * This is the action to handle external exceptions.
 	 */
