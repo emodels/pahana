@@ -29,7 +29,7 @@
 	<div class="container_12">
 	<!--==============================header=================================-->
 	<header>
-            <h1 style="margin-left: -20px; margin-top: -5px"><a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="" class="logo"></a></h1>
+            <h1 style="margin-left: -20px; margin-top: -5px"><a href="<?php echo Yii::app()->request->baseUrl; ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="" class="logo"></a></h1>
             <div style="position: absolute; right: 0px; top: 23px"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/banner_1.jpg"/></div>
             <div class="wrapper"></div>
             <nav>
@@ -43,6 +43,21 @@
                 </ul>
                 <div class="clear"></div>
             </nav>
+            <?php
+                $flashMessages = Yii::app()->user->getFlashes();
+                if ($flashMessages) {
+                    echo '<ul class="flashes" style="list-style-type:none; margin: 0px; padding: 0px">';
+                    foreach($flashMessages as $key => $message) {
+                        echo '<li><div class="flash-' . $key . '">' . $message . "</div></li>\n";
+                    }
+                    echo '</ul>';
+                    Yii::app()->clientScript->registerScript(
+                    'myHideEffect',
+                    '$(".flashes").animate({opacity: 1.0}, 3000).fadeOut("slow");',
+                    CClientScript::POS_READY
+                    );            
+                }
+            ?>
         </header>
         <?php echo $content; ?>
         </div>
@@ -68,17 +83,17 @@
             </aside>
             <div class="container_12" style="float: left; width: 700px; padding-top: 10px">
                 <div style="text-align: center; font-weight: bold; color: white">
-                    <a href="#" style="padding-right: 20px; border-bottom: solid 1px black" class="button">Home</a>
+                    <a href="<?php echo Yii::app()->request->baseUrl; ?>" style="padding-right: 20px; border-bottom: solid 1px black" class="button">Home</a>
                     <a href="#" style="padding-right: 5px">&nbsp;</a>
-                    <a href="#" style="padding-right: 20px; border-bottom: solid 1px black" class="button">About Us</a>
+                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/about" style="padding-right: 20px; border-bottom: solid 1px black" class="button">About Us</a>
                     <a href="#" style="padding-right: 5px">&nbsp;</a>
-                    <a href="#" style="padding-right: 20px; border-bottom: solid 1px black" class="button">Archives</a>
+                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/archives" style="padding-right: 20px; border-bottom: solid 1px black" class="button">Archives</a>
                     <a href="#" style="padding-right: 5px">&nbsp;</a>
-                    <a href="#" style="padding-right: 20px; border-bottom: solid 1px black" class="button">Objective</a>
+                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/Objective" style="padding-right: 20px; border-bottom: solid 1px black" class="button">Objective</a>
                     <a href="#" style="padding-right: 5px">&nbsp;</a>
-                    <a href="#" style="padding-right: 20px; border-bottom: solid 1px black" class="button">Privacy Policy</a>
+                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/privacy" style="padding-right: 20px; border-bottom: solid 1px black" class="button">Privacy Policy</a>
                     <a href="#" style="padding-right: 5px">&nbsp;</a>
-                    <a href="#" style="padding-right: 20px; border-bottom: solid 1px black" class="button">Contacts</a>
+                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/contact" style="padding-right: 20px; border-bottom: solid 1px black" class="button">Contacts</a>
                 </div>
                 <div style="text-align: center; margin-top: 10px; padding-top: 5px; border-top: dotted 1px silver"><div class="indent"><strong>Pahana</strong> &copy; 2013 - <a href="http://www.snt3.com">Design by SNT3</a> <br><!-- {%FOOTER_LINK} --></div></div>
             </div>

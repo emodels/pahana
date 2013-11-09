@@ -55,7 +55,7 @@
                 <img src="images/sigiriya.png" alt="" class="block-img p2">
                 <p style="text-align: justify">Pahana Magazine is a free distributed Sri Lankan Community Magazine that aims to reach a Sri Lankan population of over 70,000 all over Australia and New Zealand. Pahana is published twice a month. Pahana and Pahana Extra 1st Saturday and 3rd Saturday.</p>
                 <p style="text-align: justify">The demand for entertainment in literacy media itself gave birth to Pahana. We reach out to readers of all ages and life styles with a wide range of articles in both English and Sinhala providing entertainment and education.</p>
-                <a href="#" class="button top" style="margin-top: -35px; position: absolute; left: 372px">Read More</a>
+                <a href="<?php echo Yii::app()->request->baseUrl; ?>/about" class="button top" style="margin-top: -35px; position: absolute; left: 372px">Read More</a>
             </div>
 
         </div>
@@ -63,10 +63,10 @@
             <div class="indent">
                 <h2 class="ind1">Main objective</h2>
                 <ul class="list p3">
-                        <li><a href="#">To promote traditional values and activities among the Sri Lankans in Australia, enbling them to retain their cultural identity aas an integral section of multicultural Australia</a></li>
-                        <li><a href="#">To disseminate information and ideas among the Sri Lankans in order for them to make a meaningful contribution to the Australian way of life</a></li>
+                        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/objective">To promote traditional values and activities among the Sri Lankans in Australia, enbling them to retain their cultural identity aas an integral section of multicultural Australia</a></li>
+                        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/objective">To disseminate information and ideas among the Sri Lankans in order for them to make a meaningful contribution to the Australian way of life</a></li>
                 </ul>
-                <a href="#" class="button top" style="margin-top: -20px; position: absolute; right: 10px">Read More</a>
+                <a href="<?php echo Yii::app()->request->baseUrl; ?>/objective" class="button top" style="margin-top: -20px; position: absolute; right: 10px">Read More</a>
             </div>
         </div>
         <div style="float: left; display: inline; margin-left: 65px; margin-right: 10px; position: relative;">
