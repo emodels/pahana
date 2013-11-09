@@ -29,12 +29,12 @@
 	<div class="container_12">
 	<!--==============================header=================================-->
 	<header>
-            <h1 style="margin-left: -20px; margin-top: -5px"><a href="<?php echo Yii::app()->request->baseUrl; ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="" class="logo"></a></h1>
+            <h1 style="margin-left: -20px; margin-top: -5px"><a href="<?php echo Yii::app()->request->baseUrl; ?>/"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="" class="logo"></a></h1>
             <div style="position: absolute; right: 0px; top: 23px"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/banner_1.jpg"/></div>
             <div class="wrapper"></div>
             <nav>
                 <ul class="sf-menu">
-                    <li id="li_home" class="current"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>">Home</a></li>
+                    <li id="li_home" class="current"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>/">Home</a></li>
                     <li id="li_about"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>/about">About Us</a></li>
                     <li id="li_archives"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>/archives">Archives</a></li>
                     <li id="li_Objective"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>/Objective">Objective</a></li>
@@ -83,7 +83,7 @@
             </aside>
             <div class="container_12" style="float: left; width: 700px; padding-top: 10px">
                 <div style="text-align: center; font-weight: bold; color: white">
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>" style="padding-right: 20px; border-bottom: solid 1px black" class="button">Home</a>
+                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/" style="padding-right: 20px; border-bottom: solid 1px black" class="button">Home</a>
                     <a href="#" style="padding-right: 5px">&nbsp;</a>
                     <a href="<?php echo Yii::app()->request->baseUrl; ?>/about" style="padding-right: 20px; border-bottom: solid 1px black" class="button">About Us</a>
                     <a href="#" style="padding-right: 5px">&nbsp;</a>
