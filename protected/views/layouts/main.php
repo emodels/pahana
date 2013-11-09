@@ -36,10 +36,10 @@
                 <ul class="sf-menu">
                     <li id="li_home" class="current"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>">Home</a></li>
                     <li id="li_about"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>/about">About Us</a></li>
-                    <li><strong></strong><a href="#">Archives</a></li>
-                    <li><strong></strong><a href="#">Objective</a></li>
-                    <li><strong></strong><a href="#">Privacy Policy</a></li>
-                    <li><strong></strong><a href="#">Contacts</a></li>
+                    <li id="li_archives"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>/archives">Archives</a></li>
+                    <li id="li_Objective"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>/Objective">Objective</a></li>
+                    <li id="li_privacy"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>/privacy">Privacy Policy</a></li>
+                    <li id="li_contact"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>/contact">Contacts</a></li>
                 </ul>
                 <div class="clear"></div>
             </nav>

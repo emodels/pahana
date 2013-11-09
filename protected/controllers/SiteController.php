@@ -33,6 +33,38 @@ class SiteController extends Controller
             $this->render('index', array('month_paper'=>$month_paper, 'mid_month_paper'=>$mid_month_paper));
 	}
 
+        public function actionArchives() {
+            
+            $paper = new Paper();
+            
+            if(isset($_POST['Paper'])){
+                $paper->attributes = $_POST['Paper'];
+                
+                $criteria = new CDbCriteria();
+                
+                if ($paper->year != '') {
+                    $criteria->addCondition('year = ' . $paper->year);
+                }
+                if ($paper->month != '') {
+                    $criteria->addCondition('month = ' . $paper->month);
+                }
+                if ($paper->type != '') {
+                    $criteria->addCondition('type = ' . $paper->type);
+                }
+                
+                $criteria->addCondition('status = 1');
+                $criteria->order = 'year DESC, month DESC';
+            } else {
+                $criteria = new CDbCriteria();
+                $criteria->condition = 'status = 1';
+                $criteria->order = 'year DESC, month DESC';
+            } 
+            
+            $dataProvider = new CActiveDataProvider('Paper', array('criteria'=>$criteria, 'pagination' => array('pageSize' => 150)));
+            
+            $this->render('archives', array('model'=>$paper, 'dataProvider' => $dataProvider));
+        }
+        
         public function actionPaper($id) {
             $paper = Paper::model()->findByPk($id);
             
