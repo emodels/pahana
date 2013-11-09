@@ -2,10 +2,10 @@
 <script type="text/javascript">
 $(document).ready(function(){
     $('#lnk_next').click(function(){
-        $('#divScroller').scrollLeft($('#divScroller').scrollLeft() + 920);
+        $('.page.selected').next('.page').children('a').click();
     });
     $('#lnk_prev').click(function(){
-        $('#divScroller').scrollLeft($('#divScroller').scrollLeft() - 920);
+        $('.page.selected').prev('.page').children('a').click();
     });
     $(window).scroll(function(){
         if ($(this).scrollTop() > 100) {
@@ -31,12 +31,16 @@ function LoadPage(strFile){
     <div class="wrapper-after" style="padding: 10px; position: relative">
         <h1 style="font-size: 22px; padding: 10px 0 10px 0"><?php echo ($model->type == 0 ? 'Monthly Issue' : 'Mid Monthly Issue') . ' : ' . date("F", mktime(0, 0, 0, $model->month, 10)) . ' - ' . $model->year; ?></h1>
         <div id="divScroller" style="width: 100%; overflow-x: scroll; overflow-y: hidden; border: solid 1px silver;">
-            <div class="row" style="padding-top: 10px; width: <?php echo 230 * $model->page_count; ?>px; height: 290px;">
+            <div class="row" style="padding-top: 10px; width: 100%; height: 290px;">
                 <?php
                 $this->widget('zii.widgets.CListView', array(
                     'dataProvider'=>$dataProvider,
                     'itemView'=>'_pages_list',
-                    'template'=>"{items}",
+                    'template'=>"{pager}{items}",
+                     'pager' => array(
+                        'header' => '&nbsp;',
+                        'htmlOptions' => array('style'=>'padding-right: 20px')
+                     ),  
                 ));
                 ?>
             </div>

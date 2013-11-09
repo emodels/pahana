@@ -78,7 +78,7 @@ class SiteController extends Controller
                     'order' => 'TRIM(REPLACE(name, ".pdf", ""))+0'
             ));
             
-            $dataProvider = new CActiveDataProvider('Pages', array('criteria'=>$criteria, 'pagination' => array('pageSize' => 150)));
+            $dataProvider = new CActiveDataProvider('Pages', array('criteria'=>$criteria, 'pagination' => array('pageSize' => 4)));
             
             $this->render('paper', array('model'=>$paper, 'dataProvider'=>$dataProvider));
         }
