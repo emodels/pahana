@@ -119,7 +119,7 @@ class SiteController extends Controller
                                         $mailer->SMTPSecure = 'ssl';
                                     }
                                     $mailer->IsSMTP();
-                                    $mailer->SMTPAuth = true;
+                                    $mailer->SMTPAuth = false;
                                     $mailer->Username = Yii::app()->params['SMTP_Username'];
                                     $mailer->Password = Yii::app()->params['SMTP_password'];
                                     $mailer->From = Yii::app()->params['SMTP_Username'];
