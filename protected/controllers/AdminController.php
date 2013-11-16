@@ -21,6 +21,14 @@ class AdminController extends Controller
             $this->render('index', array('dataProvider' => $dataProvider));
 	}
         
+        public function actionBanner() {
+            $criteria = new CDbCriteria();
+            $criteria->order = 'id DESC';
+
+            $dataProvider = new CActiveDataProvider('Banner', array('criteria'=>$criteria, 'pagination' => array('pageSize' => 150)));
+            $this->render('banner', array('dataProvider' => $dataProvider));
+        }
+        
         public function actionDelete($id){
             Paper::model()->deleteByPk($id);
         }
@@ -138,6 +146,34 @@ class AdminController extends Controller
                 $page->folder = $folder;
                 
                 $page->save();
+                //---------------------------------
+                
+                echo $return;
+        }
+
+        public function actionUploadBanner()
+        {
+                Yii::import("ext.EAjaxUpload.qqFileUploader");
+
+                $folder = 'images/banners/';
+                $allowedExtensions = array("jpg", "png");
+                $sizeLimit = 100 * 1024 * 1024;
+                
+                $uploader = new qqFileUploader($allowedExtensions, $sizeLimit, $_FILES['qqfile']);
+                
+                $result = $uploader->handleUpload($folder, true);
+                $return = htmlspecialchars(json_encode($result), ENT_NOQUOTES);
+
+                $fileSize=filesize($folder.$result['filename']);
+                $fileName=$result['filename'];
+
+                //----------Add to Database--------
+                $banner = new Banner();
+                
+                $banner->name = $fileName;
+                $banner->type = 'home_page_slideshow';
+                
+                $banner->save();
                 //---------------------------------
                 
                 echo $return;

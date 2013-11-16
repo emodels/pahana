@@ -18,26 +18,28 @@
                 $(this).attr('width', '100%') 
             }
         );
+        $('#iframe_monthly').attr('src', '<?php echo Yii::app()->baseUrl . '/' . $month_paper->pages[0]->folder . '1.pdf'; ?>#toolbar=0&navpanes=0');
+        $('#iframe_mid_monthly').attr('src', '<?php echo Yii::app()->baseUrl . '/' . $mid_month_paper->pages[0]->folder . '1.pdf'; ?>#toolbar=0&navpanes=0');
     });
 </script>
 <div class="main-slider">
     <div class="flexslider clearfix">
         <ul class="slides">
-            <li><img alt="" src="images/slide.jpg">
+            <li><img alt="" src="<?php echo Yii::app()->baseUrl; ?>/images/slide.jpg">
                 <div class="flex-caption">
                         <div class="inner">
                             <strong></strong>
                         </div>
                 </div>
                 </li>
-            <li><img alt="" src="images/slide-1.jpg">
+            <li><img alt="" src="<?php echo Yii::app()->baseUrl; ?>/images/slide-1.jpg">
                 <div class="flex-caption">
                         <div class="inner">
                             <strong></strong>
                         </div>
                 </div>
                 </li>
-            <li><img alt="" src="images/slide-2.jpg">
+            <li><img alt="" src="<?php echo Yii::app()->baseUrl; ?>/images/slide-2.jpg">
                 <div class="flex-caption">
                         <div class="inner">
                             <strong></strong>
@@ -72,14 +74,23 @@
         <div style="float: left; display: inline; margin-left: 65px; margin-right: 10px; position: relative;">
             <div class="padding bookshelf">
                 <div class="books">
-                    <ul>
                     <?php if(isset($month_paper)){ ?>
-                        <li><a href="<?php echo Yii::app()->baseUrl . '/paper/id/' . $month_paper->id; ?>"><img src="images/month_book.jpg" alt="" class="bookshelf_book"></a></li>
+                    <div class="column" style="padding: 0 20px 0 15px">
+                        <a style="position: absolute" href="<?php echo Yii::app()->baseUrl . '/paper/id/' . $month_paper->id; ?>">
+                            <div style="width: 124px; height: 155px; border: solid 1px gray;"></div>
+                        </a>
+                        <iframe id="iframe_monthly" src="" scrolling="no" frameborder="0" style="width: 125px; height: 155px; overflow: hidden;" marginheight="0" marginwidth="0" class="bookshelf_book"></iframe>
+                    </div>
                     <?php } ?>
                     <?php if(isset($mid_month_paper)){ ?>    
-                        <li><a href="<?php echo Yii::app()->baseUrl . '/paper/id/' . $mid_month_paper->id; ?>"><img src="images/midmonth_book.jpg" alt="" class="bookshelf_book"></a></li>  
+                    <div class="column">
+                        <a style="position: absolute" href="<?php echo Yii::app()->baseUrl . '/paper/id/' . $mid_month_paper->id; ?>">
+                            <div style="width: 124px; height: 155px; border: solid 1px gray;"></div>
+                        </a>
+                        <iframe id="iframe_mid_monthly" src="" scrolling="no" frameborder="0" style="width: 125px; height: 155px; overflow: hidden;" marginheight="0" marginwidth="0" class="bookshelf_book"></iframe>
+                    </div>  
                     <?php } ?>
-                    </ul>
+                    <div class="clearfix"></div>
                 </div>
             </div>
             <div class="books_title">

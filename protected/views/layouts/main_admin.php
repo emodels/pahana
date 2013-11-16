@@ -37,6 +37,7 @@
                     <li id="li_home" class="current"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin">Home</a></li>
                     <li id="li_add"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin/add">Add New Paper</a></li>
                     <li id="li_profile"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin/profile">Edit Profile</a></li>
+                    <li id="li_banner"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin/banner">Banners</a></li>
                     <li id="li_signout"><strong></strong><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/logout">Sign out</a></li>
                     <li><a href="#" style="cursor: default">&nbsp;</a></li>
                 </ul>

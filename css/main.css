@@ -453,17 +453,15 @@ nav select{
     background: url(../images/wall-bookshelf.png) 0 0 no-repeat;
     width: 350px;
     height: 53px;
-    margin-top: 150px;
+    margin-top: 160px;
     left: 20px;
     position: relative;
 }
 
 .books {
     position: relative;
-    bottom: 110px;
+    bottom: 145px;
     width: 100%;
-    left: 30px;
-    right: 30px;
 }
 
 .books ul {
