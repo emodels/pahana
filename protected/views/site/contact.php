@@ -63,6 +63,6 @@
             </div>
             <?php $this->endWidget(); ?>
         </div>
-        <div style="position: absolute; top: 25px; right: 10px; z-index: 1000"><img src="images/contact_page_banner.jpg" /></div>
+        <div style="position: absolute; top: 25px; right: 10px; z-index: 1000"><img src="images/banners/<?php echo $banner; ?>" style="width: 458px; height: 570px" /></div>
     </div>
 </section>    

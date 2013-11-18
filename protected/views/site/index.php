@@ -25,27 +25,15 @@
 <div class="main-slider">
     <div class="flexslider clearfix">
         <ul class="slides">
-            <li><img alt="" src="<?php echo Yii::app()->baseUrl; ?>/images/slide.jpg">
+            <?php foreach ($banners as $value) { ?>
+            <li><img alt="" src="<?php echo Yii::app()->baseUrl; ?>/images/banners/<?php echo $value->name; ?>" style="width: 940px; height: 368px">
                 <div class="flex-caption">
-                        <div class="inner">
-                            <strong></strong>
-                        </div>
-                </div>
-                </li>
-            <li><img alt="" src="<?php echo Yii::app()->baseUrl; ?>/images/slide-1.jpg">
-                <div class="flex-caption">
-                        <div class="inner">
-                            <strong></strong>
-                        </div>
-                </div>
-                </li>
-            <li><img alt="" src="<?php echo Yii::app()->baseUrl; ?>/images/slide-2.jpg">
-                <div class="flex-caption">
-                        <div class="inner">
-                            <strong></strong>
-                        </div>
+                    <div class="inner">
+                        <strong></strong>
+                    </div>
                 </div>
             </li>
+            <?php } ?>
         </ul>
     </div>
 </div>

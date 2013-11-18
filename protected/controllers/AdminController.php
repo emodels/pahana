@@ -22,11 +22,20 @@ class AdminController extends Controller
 	}
         
         public function actionBanner() {
+            $contact_image = '';
+            
+            $banner = Banner::model()->find('type = 1');
+            
+            if (isset($banner)) {
+                $contact_image = Yii::app()->baseUrl . '/images/banners/' . $banner->name;
+            }
+            
             $criteria = new CDbCriteria();
+            $criteria->addCondition('type = 0');
             $criteria->order = 'id DESC';
 
             $dataProvider = new CActiveDataProvider('Banner', array('criteria'=>$criteria, 'pagination' => array('pageSize' => 150)));
-            $this->render('banner', array('dataProvider' => $dataProvider));
+            $this->render('banner', array('dataProvider' => $dataProvider, 'contact_image'=>$contact_image));
         }
         
         public function actionDelete($id){
@@ -80,6 +89,16 @@ class AdminController extends Controller
         public function actionPageDelete($id){
             if (Yii::app()->request->isAjaxRequest) {
                 Pages::model()->deleteByPk($id);
+            }
+        }
+        
+        public function actionBannerDelete($id){
+            if (Yii::app()->request->isAjaxRequest) {
+                $banner = Banner::model()->findByPk($id);
+                
+                unlink(Yii::getPathOfAlias('webroot') . '/images/banners/' . $banner->name);
+                
+                $banner->delete();
             }
         }
         
@@ -171,7 +190,13 @@ class AdminController extends Controller
                 $banner = new Banner();
                 
                 $banner->name = $fileName;
-                $banner->type = 'home_page_slideshow';
+
+                if (isset($_GET['mode'])) {
+                    Banner::model()->deleteAll('type = 1');
+                    $banner->type = 1;
+                } else {   
+                    $banner->type = 0;
+                }
                 
                 $banner->save();
                 //---------------------------------

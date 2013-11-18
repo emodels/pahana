@@ -29,8 +29,9 @@ class SiteController extends Controller
 	{
             $month_paper = Paper::model()->find(array('condition'=>'type = 0 AND status = 1', 'order'=>'year DESC, month DESC'));
             $mid_month_paper = Paper::model()->find(array('condition'=>'type = 1 AND status = 1', 'order'=>'year DESC, month DESC'));
+            $banners = Banner::model()->findAll(array('condition'=>'type = 0', 'order'=>'name'));
             
-            $this->render('index', array('month_paper'=>$month_paper, 'mid_month_paper'=>$mid_month_paper));
+            $this->render('index', array('month_paper'=>$month_paper, 'mid_month_paper'=>$mid_month_paper, 'banners'=>$banners));
 	}
 
         public function actionArchives() {
@@ -102,7 +103,9 @@ class SiteController extends Controller
 	 */
 	public function actionContact()
 	{
-		$model=new ContactForm;
+		$banner = Banner::model()->find('type = 1');
+            
+                $model=new ContactForm;
 		if(isset($_POST['ContactForm']))
 		{
 			$model->attributes=$_POST['ContactForm'];
@@ -144,7 +147,7 @@ class SiteController extends Controller
                                 Yii::app()->user->setFlash('success','Thank you for contacting us. We will respond to you as soon as possible.');
 			}
 		}
-		$this->render('contact',array('model'=>$model));
+		$this->render('contact',array('model'=>$model, 'banner'=>$banner->name));
 	}
 
 	/**

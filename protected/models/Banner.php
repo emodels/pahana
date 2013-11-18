@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table 'banner':
  * @property integer $id
- * @property integer $name
+ * @property string $name
  * @property integer $type
  */
 class Banner extends CActiveRecord
@@ -37,7 +37,8 @@ class Banner extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name, type', 'required'),
-			array('name, type', 'numerical', 'integerOnly'=>true),
+			array('type', 'numerical', 'integerOnly'=>true),
+			array('name', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, type', 'safe', 'on'=>'search'),
@@ -79,7 +80,7 @@ class Banner extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name);
+		$criteria->compare('name',$this->name,true);
 		$criteria->compare('type',$this->type);
 
 		return new CActiveDataProvider($this, array(
