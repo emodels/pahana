@@ -149,7 +149,7 @@ class AdminController extends Controller
                 $allowedExtensions = array("pdf");
                 $sizeLimit = 100 * 1024 * 1024;
                 
-                $uploader = new qqFileUploader($allowedExtensions, $sizeLimit, $_FILES['qqfile']);
+                $uploader = new qqFileUploader($allowedExtensions, $sizeLimit);
                 
                 $result = $uploader->handleUpload($folder, true);
                 $return = htmlspecialchars(json_encode($result), ENT_NOQUOTES);
@@ -178,7 +178,7 @@ class AdminController extends Controller
                 $allowedExtensions = array("jpg", "png");
                 $sizeLimit = 100 * 1024 * 1024;
                 
-                $uploader = new qqFileUploader($allowedExtensions, $sizeLimit, $_FILES['qqfile']);
+                $uploader = new qqFileUploader($allowedExtensions, $sizeLimit);
                 
                 $result = $uploader->handleUpload($folder, true);
                 $return = htmlspecialchars(json_encode($result), ENT_NOQUOTES);
