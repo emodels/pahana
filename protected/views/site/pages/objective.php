@@ -11,7 +11,7 @@
         <div style="width: 100%">
             <p style="text-align: justify">The main objective of the magazine have been identified as follows:</p>
             <ul style="list-style: disc; padding-left: 15px; text-align: justify">
-                <li style="padding-bottom: 15px; width: 540px">To promote traditional values and activities among the Sri Lankans in Australia, enabling them to retain their cultural identity aas an integral section of multicultural Australia.</li>
+                <li style="padding-bottom: 15px; width: 540px">To promote traditional values and activities among the Sri Lankans in Australia, enabling them to retain their cultural identity as an integral section of multicultural Australia.</li>
                 <li style="padding-bottom: 15px; width: 540px">To disseminate information and ideas among the Sri Lankans in order for them to make a meaningful contribution to the Australian way of life.</li>
                 <li style="padding-bottom: 15px; width: 540px">To provide facilities for Sri Lankans in Australia to share news and views about Sri Lanka and Australia.</li>
                 <li style="padding-bottom: 15px">To provide facilities for Sri Lankans in Australia of all walks of life to display and enhance their talents and creative abilities to improve the quality of life of the community.</li>

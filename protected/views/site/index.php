@@ -55,7 +55,7 @@
             <div class="indent">
                 <h2 class="ind1">Main objective</h2>
                 <ul class="list p3">
-                        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/objective">To promote traditional values and activities among the Sri Lankans in Australia, enbling them to retain their cultural identity aas an integral section of multicultural Australia</a></li>
+                        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/objective">To promote traditional values and activities among the Sri Lankans in Australia, enbling them to retain their cultural identity as an integral section of multicultural Australia</a></li>
                         <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/objective">To disseminate information and ideas among the Sri Lankans in order for them to make a meaningful contribution to the Australian way of life</a></li>
                 </ul>
                 <a href="<?php echo Yii::app()->request->baseUrl; ?>/objective" class="button top" style="margin-top: -20px; position: absolute; right: 10px">Read More</a>
