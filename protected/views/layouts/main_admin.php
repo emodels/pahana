@@ -29,8 +29,7 @@
 	<div class="container_12">
 	<!--==============================header=================================-->
 	<header>
-            <h1 style="margin-left: -20px; margin-top: -5px"><a href="<?php echo Yii::app()->request->baseUrl; ?>/"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="" class="logo"></a></h1>
-            <div style="position: absolute; right: 0px; top: 23px"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/banner_1.jpg"/></div>
+            <h1 style="margin-left: -20px; margin-top: -5px"><a href="<?php echo Yii::app()->request->baseUrl; ?>/"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.jpg" alt="" class="logo"></a></h1>
             <div class="wrapper"></div>
             <nav>
                 <ul class="sf-menu">
