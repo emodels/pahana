@@ -22,7 +22,7 @@
                 <div class="column" style="width: 150px">Year</div>
                 <div class="column">
                     <?php
-                    $current_year = date("Y");
+                    $current_year = date("Y") - 5;
                     
                     for ($x = 0; $x < 10; $x++) {
                        $array_years[($current_year + $x)] = ($current_year + $x);
